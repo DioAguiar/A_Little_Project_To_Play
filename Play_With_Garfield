@@ -1,0 +1,46 @@
+using System;
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Talk_with_Garfield
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine("Odeio segunda-feira...");
+            Console.WriteLine("Vam'bora, fala o que voce quer de uma vez, ou vaza se nao for nada.");
+
+            Random random = new Random();
+            string[] respostas =
+            {
+             "Sim!",
+             "Nao!",
+             "Talvez...",
+             "Depois ce me amola, deixa eu comer minha lasanha.",
+             "Ai, agora é a hora da soneca, deixa eu dormir.",
+             "Obvio que nao!",
+             "Claro que sim!",
+             "Depende do seu ponto de vista.",
+             "E eu sei la cara, so sou um gato domestico laranja!",
+             "Logo logo voce descobre."
+            };
+            while (true)
+            {
+                string pergunta = Console.ReadLine().ToLower();
+
+                if (pergunta == "sair")
+                    {
+                    break;
+                    }
+                int indexResposta = random.Next(respostas.Length);
+                string resposta = respostas[indexResposta];
+                Console.WriteLine($"Garfield diz: {resposta}");
+            }
+            Console.WriteLine("Ta beleza, foi um otimo papo, agora me deixa em paz, por favor?");
+        }
+    }
+}
